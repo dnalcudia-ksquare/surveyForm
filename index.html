@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey form</title>
+</head>
+<style>
+    header {
+        text-align: center;
+        border-bottom: 1px solid black;
+        margin-bottom: 25px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .container img {
+        border-radius: 15%;
+    }
+    form input,select,textarea {
+        margin-bottom: 15px;
+    }
+    form button {
+        font-size: 13px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <header>
+        <h1>What was your experience at the restaurant?</h1>
+        <p>Your comments help us to be a better place!</p>
+    </header>
+    <div class="container">
+            <form action="">
+                <label for="client_name">Name:</label>
+                <input type="text" name="client_name" id="client_name"><br>
+                <label for="client_email">Email:</label>
+                <input type="email" name="client_email" id="client_email"><br>
+                <label for="client_spent">How many you spent in the restaurant?</label>
+                <input type="number" name="client_spent" id="client_spent" min="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /><br>
+                <label for="client_favorite_dish">What was your favorite dish?</label>
+                <select name="client_favorite_dish" id="client_favorite_dish">
+                    <option value="">Pan de cazón</option>
+                    <option value="">Poc chuc</option>
+                    <option value="">Puchero</option>
+                    <option value="">Bistec de cazuela</option>
+                    <option value="">Camarones al coco</option>
+                </select><br>
+                <label for="client_rating">What rating would you give the service? [1-5]</label><br>
+                <label for="client_rating_1">1</label>
+                <input type="radio" name="client_rating" id="client_rating_1" value="1">
+                <label for="client_rating_2">2</label>
+                <input type="radio" name="client_rating" id="client_rating_2" value="2">
+                <label for="client_rating_3">3</label>
+                <input type="radio" name="client_rating" id="client_rating_3" value="3">
+                <label for="client_rating_4">4</label>
+                <input type="radio" name="client_rating" id="client_rating_4" value="4">
+                <label for="client_rating_5">5</label>
+                <input type="radio" name="client_rating" id="client_rating_5" value="5"><br>
+                <label for="client_opinion">Give us your opinion about the food!</label><br>
+                <textarea name="client_opinion" id="client_opinion" cols="30" rows="10"></textarea><br>
+                <label for="client_spam">Do you want to continue receiving promotions in your email?</label>
+                <label for="client_spam_yes">Yes!</label>
+                <input type="checkbox" name="client_spam" id="client_spam_yes"> <br>
+                <button>Submit :)</button>
+            </form>
+            <img src="https://ep01.epimg.net/elviajero/imagenes/2019/04/30/actualidad/1556625406_804924_1556636228_noticia_normal.jpg" alt="restaurant" width="50%">
+    </div>
+</body>
+</html>
